@@ -101,7 +101,16 @@ public class MainActivity extends Activity {
                         //
                         start = System.currentTimeMillis();
 
-                        File[] childs = dir.listFiles().clone();
+                        File[] childs = null;
+                        if(null==dir || null==dir.listFiles()){
+                            continue;
+                        }else{
+                            childs = dir.listFiles().clone();
+                        }
+
+                        if (null== childs || 0==childs.length){
+                            continue;
+                        }// end if
 
                         end = System.currentTimeMillis();
                         timeOnIO += (end - start);
@@ -119,7 +128,15 @@ public class MainActivity extends Activity {
                                 dirNum++;
                             } else {
                                 fileNum++;
-                                process(file);
+                                // ------ process file ------
+                                String fileName = file.getName();
+                                String lowerName = fileName.toLowerCase();
+                                if (lowerName.endsWith(APK)) {
+                                    apkNum++;
+                                } else {
+                                    // do nothing
+                                }
+                                // ------ process file ------
                             }
                             publishProgress();// refresh state
                         }
@@ -151,17 +168,6 @@ public class MainActivity extends Activity {
     private LinkedList<File> mDirStack = new LinkedList<File>();
 
     private static final String APK = ".apk";
-
-    private void process(File file) {
-        // TODO
-        String fileName = file.getName();
-        String lowerName = fileName.toLowerCase();
-        if (lowerName.endsWith(APK)) {
-            apkNum++;
-        } else {
-
-        }
-    }
 
     TimerTask task = new TimerTask() {
         public void run() {
