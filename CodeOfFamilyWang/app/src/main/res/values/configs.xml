@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- on=1; off=0-->
+    <string name="printLogOn">1</string>
+
+</resources>

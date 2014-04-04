@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="test_title">测试-标题</string>
+    <string name="test_list_head">测试-列表-头</string>
+    <string name="test_list_item">测试-列表-元素</string>
+    <string name="test_list_foot">测试-列表-尾</string>
+    <string name="test_loading">测试-加载</string>
+
+
+</resources>
