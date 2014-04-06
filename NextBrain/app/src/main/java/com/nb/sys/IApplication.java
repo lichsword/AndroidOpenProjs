@@ -5,8 +5,5 @@ package com.nb.sys;
  */
 public interface IApplication {
 
-    public void create();
-
-    public void destroy();
 
 }

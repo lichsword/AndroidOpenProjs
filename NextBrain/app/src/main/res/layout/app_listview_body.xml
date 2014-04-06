@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     tools:context="com.lichsword.nextbrain.app.MainActivity">
 
-    <ListView
+    <com.nb.impl.android.views.AppListView
+        android:background="#ffff00"
         android:id="@+id/lv_data"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent" />
 
 </FrameLayout>
